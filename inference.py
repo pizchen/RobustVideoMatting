@@ -19,6 +19,7 @@ from torchvision import transforms
 from typing import Optional, Tuple
 from tqdm.auto import tqdm
 
+from model import MattingNetwork
 from inference_utils import VideoReader, VideoWriter, ImageSequenceReader, ImageSequenceWriter
 
 def convert_video(model,
@@ -170,7 +171,6 @@ class Converter:
     
 if __name__ == '__main__':
     import argparse
-    from model import MattingNetwork
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--variant', type=str, required=True, choices=['mobilenetv3', 'resnet50'])
